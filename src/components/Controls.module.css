@@ -1,0 +1,10 @@
+.controls {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: red;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+}
