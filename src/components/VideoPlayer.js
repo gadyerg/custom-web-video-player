@@ -4,9 +4,11 @@ import Controls from "./Controls";
 
 function VideoPlayer(props) {
   const vidRef = useRef(null);
+  const containerRef = useRef(null);
   const [isPlaying, SetIsPlaying] = useState(false);
   const [layoutIsVisible, setLayoutIsVisible] = useState(false);
   const [currentTime, setCurrentTime] = useState(0)
+  const [isFullscreen, setIsFullscreen] = useState(false)
   const [timer, setTimer] = useState(false);
 
   function playVideo() {
@@ -33,7 +35,7 @@ function VideoPlayer(props) {
     setTimer(
       setTimeout(() => {
         setLayoutIsVisible(false);
-      }, 3000)
+      }, 300000)
     );
   }
 
@@ -60,8 +62,18 @@ function VideoPlayer(props) {
     vidRef.current.volume = 0
   }
 
+  function fullScreen() {
+    if(isFullscreen) {
+      document.exitFullscreen();
+      setIsFullscreen(false)
+    } else {
+      containerRef.current.requestFullscreen();
+      setIsFullscreen(true)
+    }
+  }
+
   return (
-    <div onMouseMove={toggleLayout} className={classes.container}>
+    <div onMouseMove={toggleLayout} className={classes.container} ref={containerRef}>
       {layoutIsVisible && (
         <Controls
           isPlaying={isPlaying}
@@ -73,6 +85,8 @@ function VideoPlayer(props) {
           pause={pauseVideo}
           play={playVideo}
           mute={muteToggle}
+          fullScreen={fullScreen}
+          fullScreenState={isFullscreen}
         />
       )}
       <video
@@ -82,6 +96,7 @@ function VideoPlayer(props) {
         className={classes.video}
         onClick={toggle}
         onTimeUpdate={updateTimer}
+        onDoubleClick={fullScreen}
       ></video>
     </div>
   );

@@ -1,10 +1,36 @@
 .controls {
-    z-index: 1;
-    position: absolute;
-    width: 100%;
-    text-align: center;
     color: red;
     bottom: 0;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1%;
+}
+
+.timencon {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    bottom: 0;
+}
+
+.pp {
+    width: 3rem;
+}
+
+.screensize {
+    width: 5rem;
+}
+
+.side {
+    display: flex;
+    width: 25%;
+}
+
+.right {
+    justify-content: end;
+}
+
+input {
+    margin: 0
 }

@@ -1,8 +1,9 @@
 .container {
+    z-index: 0;
     width: 50%;
     height: 50%;
     position: relative;
-    margin: 0 auto;
+    margin: 8% auto;
 }
 
 .video {
