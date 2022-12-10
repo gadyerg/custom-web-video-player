@@ -1,14 +1,15 @@
 import './App.css';
 import React, { useState } from 'react';
-import Video from './trailer.mp4'
 import VideoPlayer from './components/VideoPlayer';
+import SelectVideo from './components/SelectVideo';
 
 function App() {
-  const [currentVideo, setCurrentVideo] = useState("../trailer.mp4")
+  const [currentVideo, setCurrentVideo] = useState(null)
 
   return (
     <React.Fragment>
-      <VideoPlayer link={Video} />
+      <SelectVideo changeVid={setCurrentVideo} />
+      <VideoPlayer link={currentVideo} />
     </React.Fragment>
  );
 }

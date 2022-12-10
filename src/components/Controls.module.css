@@ -1,5 +1,5 @@
 .controls {
-    color: red;
+    color: white;
     bottom: 0;
     display: flex;
     justify-content: space-between;
@@ -15,11 +15,14 @@
 }
 
 .pp {
-    width: 3rem;
+    width: 2rem;
+    filter: invert(100%) sepia(0%) saturate(3603%) hue-rotate(78deg) brightness(120%) contrast(108%);
+    margin-right: 1rem
 }
 
 .screensize {
-    width: 5rem;
+    width: 2rem;
+    filter: invert(100%) sepia(0%) saturate(3603%) hue-rotate(78deg) brightness(120%) contrast(108%);
 }
 
 .side {
@@ -31,6 +34,31 @@
     justify-content: end;
 }
 
-input {
-    margin: 0
+.timebar {
+    -webkit-appearance: none;
+    background-color: rgba(173, 173, 173, 0.712);
+    width: 100%;
+    color: red;
+}
+
+.timerbar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.timerbar::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.timebar::-moz-range-progress {
+    background-color: rgb(95, 95, 255);
+    height: 100%;
+}
+
+.speed {
+    background-color: rgba(173, 173, 173, 0.712);
+    border: none;
+    border-radius: .2rem;
+    color: rgb(60, 60, 223);
 }
