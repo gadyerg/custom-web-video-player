@@ -74,6 +74,7 @@ function Controls(props) {
             step=".01"
             onChange={volumeUpdate}
             ref={audioRef}
+            className={classes.volumebar}
           />
         </div>
         <div>

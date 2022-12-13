@@ -1,0 +1,19 @@
+.videobutton {
+    display: none;
+}
+
+.label {
+    width: 3rem;
+    display: block;
+    border: none;
+    background-color: rgb(51, 104, 184);
+    margin: 0 auto;
+    padding: .5rem;
+    text-align: center;
+    margin-top: 1rem;
+    color: white;
+}
+
+.label:hover {
+    cursor: pointer;
+}
